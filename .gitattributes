@@ -1,0 +1,14 @@
+# Normalize every text file to LF on checkout, regardless of the checking-
+# out machine's core.autocrlf setting -- a CRLF-converted .sh/.env breaks
+# bash ($'\r': command not found, or "bad interpreter" on the shebang
+# line), and core.autocrlf=true is a common Windows/WSL git default that
+# would otherwise convert files silently. Enumerating extensions one at a
+# time missed .env.example, .gitignore, .python-version, and uv.lock the
+# first time around, so this is a blanket rule instead: git's own
+# content-based detection decides what counts as text.
+* text=auto eol=lf
+
+# Explicit binary as a safety net, in case that auto-detection ever
+# misjudges these.
+*.pdf binary
+*.png binary

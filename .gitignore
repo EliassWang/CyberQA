@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# macOS
+.DS_Store
+
+# Test cache
+.pytest_cache/
+
+# Downloaded by load_documents.py
+data/raw/
+
+# Reproducible from data/raw/ via benchmark/scripts/build_documents.py
+data/documents/
+
+# Generated eval traces (benchmark/scripts/eval.py)
+benchmark/result/
+
+# Secrets
+.env
+
+report/
